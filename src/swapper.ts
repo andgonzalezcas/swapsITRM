@@ -26,7 +26,7 @@ export class Swapper {
   getTrade = async (route: any, fromToken: any) => {
     const trade = new this.swapperSdk.Trade(
       route,
-      new this.swapperSdk.TokenAmount(fromToken, '1000000000000000000'),
+      new this.swapperSdk.TokenAmount(fromToken, `${10 ** fromToken.decimals}`),
       this.swapperSdk.TradeType.EXACT_INPUT
     )
     return trade

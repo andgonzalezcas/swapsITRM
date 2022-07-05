@@ -5,8 +5,6 @@ require('dotenv').config();
 
 import { Swapper } from "./swapper"
 
-console.log(process.env.ALCHEMY_URL)
-
 const quickswapTest = async () => {
   const alchemy = process.env.ALCHEMY_URL
   const provider = new ethers.providers.JsonRpcProvider(alchemy)
@@ -27,7 +25,7 @@ const quickswapTest = async () => {
   console.log(trade.nextMidPrice.toSignificant(6))
 }
 
-// quickswapTest()
+quickswapTest()
 
 const uniswapTest = async () => {
   const uniswapSdk = new Swapper(uniswap, undefined, 1)
@@ -46,4 +44,4 @@ const uniswapTest = async () => {
   console.log(trade.nextMidPrice.toSignificant(6))
 }
 
-uniswapTest()
+// uniswapTest()
